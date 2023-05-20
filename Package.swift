@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7.1
+// swift-tools-version: 5.8.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -8,7 +8,8 @@ let package = Package(
     platforms: [.macOS(.v13)],
     products: [
         .executable(name: "previewShowcase",
-                    targets: ["PreviewShowcase"])
+                    targets: ["PreviewShowcase"]),
+        .library(name: "PreviewShowcaseUpdater", targets: ["PreviewShowcaseUpdater"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-argument-parser.git", .upToNextMajor(from: "1.0.0"))
@@ -16,8 +17,19 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
+        .executableTarget(
             name: "PreviewShowcase",
-            dependencies: [.product(name: "ArgumentParser", package: "swift-argument-parser")]),
+            dependencies: ["PreviewShowcaseUpdater"]),
+        .target(
+            name: "PreviewShowcaseUpdater",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser")
+            ]),
+        .testTarget(
+            name: "PreviewShowcaseUpdaterTests",
+            dependencies: ["PreviewShowcaseUpdater"],
+            resources: [
+                .process("Resources")
+            ])
     ]
 )

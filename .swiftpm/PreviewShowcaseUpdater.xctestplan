@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "BAFDDB4D-F65E-4C74-900B-B8D61C4349AA",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "PreviewShowcaseUpdaterTests",
+        "name" : "PreviewShowcaseUpdaterTests"
+      }
+    }
+  ],
+  "version" : 1
+}
