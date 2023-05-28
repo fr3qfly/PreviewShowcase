@@ -19,7 +19,7 @@ swift build -c release
 The tool can be run from the command line as follows:
 
 ```bash
-PreviewShowcaseUpdater <inputFilePath> [--changes-only] [--just-generate] [--indent-space-count <count>] [--search-path <path>] [--excluded-folders <folders>]
+previewShowcase <inputFilePath> [--changes-only] [--just-generate] [--indent-space-count <count>] [--search-path <path>] [--excluded-folders <folders>]
 ```
 
 ### Arguments
@@ -50,7 +50,7 @@ struct ShowcaseView: View {
 ```
 3. Run the script:
 ```bash
-PreviewShowcaseUpdater <Showcase file path> --search-path <Path of files to search>
+previewShowcase <Showcase file path> --search-path <Path of files to search>
 ```
 
 4. Add any dependencies (`Environment`, `EnvironmentObject`) if needed to input file.
