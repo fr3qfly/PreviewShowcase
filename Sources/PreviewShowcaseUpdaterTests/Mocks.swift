@@ -9,6 +9,7 @@ import Foundation
 
 enum MockFile: String, Mockable {
     case inputFile_EmptyStack
+    case inputFile_ExistingPreviews
     
     var fileName: String {
         rawValue
@@ -51,7 +52,7 @@ extension Mockable {
         try decoder.decode(T.self, from: data())
     }
     
-    func getMock(_ encoding: String.Encoding = .utf8) throws -> String {
+    func getMockText(_ encoding: String.Encoding = .utf8) throws -> String {
         guard let string = try String(data: data(), encoding: encoding) else {
             throw MockableError.badStringEncoding(encoding)
         }

@@ -11,7 +11,7 @@ final class MockableTests: XCTestCase {
 
     func testGetMock_String() {
         do {
-            let mockString: String = try MockFile.inputFile_EmptyStack.getMock()
+            let mockString = try MockFile.inputFile_EmptyStack.getMockText()
             
             XCTAssertTrue(mockString.contains("LazyVStack"))
         } catch let error as LocalizedError {

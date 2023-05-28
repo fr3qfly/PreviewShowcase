@@ -1,22 +1,17 @@
 import SwiftUI
 
 struct ShowcaseView: View {
-    @StateObject
-    private var coordinator = BaseNavigationCoordinator<AppRoute>()
-    @StateObject
-    private var settingsCoordinator = SettingsCoordinator()
-    var body: some View {
-        ScrollView {
-            LazyVStack {
-            }
-        }
-        .environmentObject(coordinator)
-        .environmentObject(settingsCoordinator)
-    }
+	
+	var body: some View {
+		ScrollView {
+			LazyVStack {
+			}
+		}
+	}
 }
 
 struct ShowcaseView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShowcaseView()
-    }
+	static var previews: some View {
+		ShowcaseView()
+	}
 }
