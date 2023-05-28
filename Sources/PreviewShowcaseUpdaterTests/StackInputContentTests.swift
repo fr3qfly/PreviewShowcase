@@ -32,14 +32,14 @@ final class StackInputContentTests: XCTestCase {
         let inputContent = try MockFile.inputFile_ExistingPreviews.getMockText()
         let indent = try sut.getMainVStackIndent(inputContent)
         let expectedContent = """
-                Group {
-                    MyView_Previews.previews
-                    MyView2_Previews.previews
-                    ContentView_Previews.previews
-                    OtherView.previews
-                }
-
-"""
+            \t\t\t\tGroup {
+            \t\t\t\t\tMyView_Previews.previews
+            \t\t\t\t\tMyView2_Previews.previews
+            \t\t\t\t\tContentView_Previews.previews
+            \t\t\t\t\tOtherView.previews
+            \t\t\t\t}
+            
+            """
         
         // When
         let stackContent = try sut.getStackContent(from: inputContent, closingIndent: indent)
