@@ -1,6 +1,6 @@
-# PreviewShowcaseUpdater
+# PreviewShowcase
 
-PreviewShowcaseUpdater is a command-line tool that updates Swift files containing a VStack with previews by generating and adding new preview structs based on the existing codebase.
+PreviewShowcase is a command-line tool that updates Swift files containing a `LazyVStack` with previews by generating and adding new previews based on the existing codebase.
 
 ## Installation
 To use PreviewShowcaseUpdater, follow these steps:
@@ -12,6 +12,8 @@ swift build -c release
 ```
 3. Locate the binary file generated after the build process, usually found at .build/release/PreviewShowcaseUpdater.
 4. You can either add the binary to your system's $PATH or use the full path to execute the command.
+
+(Or download the executable from the release)
 
 ## Usage
 The tool can be run from the command line as follows:
@@ -52,6 +54,11 @@ PreviewShowcaseUpdater <Showcase file path> --search-path <Path of files to sear
 ```
 
 4. Add any dependencies (`Environment`, `EnvironmentObject`) if needed to input file.
+
+5. (Optional) Add a build script to the project that will automatically add any new previews at the end of the `LazyVStack`
+```bash
+PreviewShowcaseUpdater <Showcase file path> --changes-only --search-path <Path of files to search>
+```
 
 ## How It Works
 
