@@ -13,7 +13,7 @@ swift build -c release
 3. Locate the binary file generated after the build process, usually found at .build/release/PreviewShowcaseUpdater.
 4. You can either add the binary to your system's $PATH or use the full path to execute the command.
 
-(Or download the executable from the release)
+(Or download the executable from the latest release)
 
 ## Usage
 The tool can be run from the command line as follows:
