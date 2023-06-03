@@ -109,7 +109,7 @@ public class PreviewShowcaseUpdater: ParsableCommand {
 			stackIndent: stackIndent)
 		
 		// Update file content
-        let updatedContent = try updatedContent(with: newPreviewStructsCode, in: inputFileContent, stackIndent: stackIndent)
+        let updatedContent = updatedContent(with: newPreviewStructsCode, in: inputFileContent, stackIndent: stackIndent)
 		print(updatedContent)
 		guard !justGenerate else {
 			print("Success! New Previews generated")
@@ -341,9 +341,9 @@ public class PreviewShowcaseUpdater: ParsableCommand {
 	}
 	
 	private func updateInputFile(_ newContent: String) throws {
-		
+        let url = URL(filePath: inputFileUrl.path())
 		// Write the new contents to the file
-		try newContent.write(to: inputFileUrl, atomically: true, encoding: .utf8)
+		try newContent.write(to: url, atomically: true, encoding: .utf8)
 		
 		// Print success message
 		print("Success! Updated file saved at: \(inputFileUrl.absoluteString)")

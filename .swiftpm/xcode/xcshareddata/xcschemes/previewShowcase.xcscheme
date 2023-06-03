@@ -88,15 +88,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/balazsszamody/Developer/@Fr3qFly/PreviewShowcase/SupportingFiles/inputFile_EmptyStack.swift"
+            argument = "/Users/balazsszamody/Developer/@Fr3qFly/SmartLoadCell/SmartLoadCell/Showcase/ShowcaseView.swift"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--just-generate"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--search-path /Users/balazsszamody/Developer/@Fr3qFly/SmartLoadCell/SmartLoadCell"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "--search-path /Users/balazsszamody/Developer/@Fr3qFly/PreviewShowcase/SupportingFiles/SearchFiles"
+            argument = "--excluded-folders Showcase"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
